@@ -1,0 +1,14 @@
+./source/elix_hashmap.hpp
+./source/gametypes.hpp
+./source/main.cpp
+./source/map/testmap.hpp
+./source/ourtypes.hpp
+./source/resources/font_bit.hpp
+./source/resources/joystick_generic.hpp
+./source/resources/joystick_snes.hpp
+./source/resources/joystick_xbox360.hpp
+./source/resources/keyboard_basic.hpp
+./source/resources/mouse_generic.hpp
+./source/resources/texture_blank.hpp
+./source/stb_image.h
+./source/texthandling.hpp

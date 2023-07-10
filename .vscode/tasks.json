@@ -1,0 +1,64 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	{
+		"type": "shell",
+		"label": "Build Game Program",
+		"windows": {
+			"command": "C:/dev/ninja",
+			"args": [
+				"program-debug-windows-x86_64.exe"
+			],
+		},
+		"linux": {
+			"command": "ninja",
+			"args": [
+
+			],
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		}
+	},
+	{
+		"type": "shell",
+		"label": "Build Game Code",
+		"windows": {
+			"command": "C:/dev/ninja",
+			"args": [
+				"game-debug-windows-x86_64.dll"
+
+			],
+		},
+		"linux": {
+			"command": "ninja",
+			"args": [
+				"game-debug-linux-x86_64.so"
+
+			],
+		},
+		"problemMatcher": [
+		"$gcc"
+		],
+		"group": {
+		"kind": "build",
+		"isDefault": true
+		}
+	},
+	{
+		"type": "shell",
+		"label": "Clear Old DLL",
+		"command": "del",
+		"args": ["*.tso"],
+
+		"options": {
+		"cwd": "${workspaceFolder}/build"
+		},
+	}
+
+	]
+	}

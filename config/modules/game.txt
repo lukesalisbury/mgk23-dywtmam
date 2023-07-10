@@ -1,0 +1,2 @@
+$shared
+./source/game/gamecode.cpp

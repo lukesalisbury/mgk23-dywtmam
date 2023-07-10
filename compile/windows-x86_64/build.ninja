@@ -1,0 +1,66 @@
+ninja_required_version = 1.3
+builddir=compile/windows-x86_64/log
+compiler_lib = -lstdc++ -lm -lpthread -lmingw32 -lSDL2main -lSDL2 
+compiler_lib_flags = -std=c++11 -L"C:/dev/supportlibs64/lib" -g3 
+compiler_flags = -std=c++11 -g3 
+compiler_includes = -IC:/dev/supportlibs64/include -I./include 
+compller_defines = -DPLATFORM_WINDOWS -DPLATFORM_BITS=64 
+compiler_mode = debug
+finaliser_flags = 
+binary_prefix = bin/
+binary_suffix = -debug-windows-x86_64
+compiler = gcc
+linker = gcc
+program_suffix = .exe
+shared_suffix = .dll
+static_suffix = .a
+object_dir = compile/windows-x86_64/debug
+
+rule compile_cpp
+  command = ${compiler} ${compiler_includes} ${compller_defines} ${compiler_flags} -o $out -c $in
+  description = [compile_cpp] $in
+
+rule compile_c
+  command = ${compiler} ${compiler_includes} ${compller_defines}  ${compiler_flags} -o $out -c $in
+  description = [compile_c] $in
+
+rule link_shared
+  command = ${linker} -shared ${compiler_lib_flags} $in -o ${binary_prefix}$out ${compiler_lib}
+  description = [link_shared] $in
+
+rule link_static
+  command = ${linker} -static ${compiler_lib_flags} $in -o ${binary_prefix}$out ${compiler_lib}
+  description = [link_static] $in
+
+rule link
+  command = ${linker} ${compiler_lib_flags} $in -o ${binary_prefix}$out ${compiler_lib}
+  description = [link] $in
+
+rule finalise
+  command = ${finaliser} ${finalise_flags} $in -o ${binary_prefix}$out
+  description = [finalise] $in
+
+rule build_resources
+  command = echo
+  description = [build_resources] $in
+
+rule clean
+  command = rm -rf ${object_dir}
+  description = [clean] $in
+
+
+build clean: clean
+
+#Files
+
+
+build ${object_dir}/main.o: compile_cpp source/main.cpp
+
+build program${binary_suffix}${program_suffix}: link ${object_dir}/main.o 
+
+build ${object_dir}/game/gamecode.o: compile_cpp source/game/gamecode.cpp
+
+build game${binary_suffix}${shared_suffix}: link_shared ${object_dir}/game/gamecode.o 
+
+
+default program${binary_suffix}${program_suffix} game${binary_suffix}${shared_suffix} 

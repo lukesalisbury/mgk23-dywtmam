@@ -1,0 +1,55 @@
+{
+	"files.associations": {
+		"cctype": "cpp",
+		"cmath": "cpp",
+		"cstdint": "cpp",
+		"cstdio": "cpp",
+		"cstdlib": "cpp",
+		"cwchar": "cpp",
+		"limits": "cpp",
+		"*.tcc": "cpp",
+		"cinttypes": "cpp",
+		"type_traits": "cpp",
+		"typeinfo": "cpp",
+		"array": "cpp",
+		"atomic": "cpp",
+		"clocale": "cpp",
+		"cstdarg": "cpp",
+		"cstddef": "cpp",
+		"cwctype": "cpp",
+		"deque": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"exception": "cpp",
+		"algorithm": "cpp",
+		"memory": "cpp",
+		"memory_resource": "cpp",
+		"optional": "cpp",
+		"string": "cpp",
+		"string_view": "cpp",
+		"system_error": "cpp",
+		"tuple": "cpp",
+		"utility": "cpp",
+		"fstream": "cpp",
+		"initializer_list": "cpp",
+		"iosfwd": "cpp",
+		"iostream": "cpp",
+		"istream": "cpp",
+		"new": "cpp",
+		"ostream": "cpp",
+		"sstream": "cpp",
+		"stdexcept": "cpp",
+		"streambuf": "cpp",
+		"iterator": "cpp",
+		"functional": "cpp"
+	},
+	"triggerTaskOnSave.on": true,
+	"triggerTaskOnSave.tasks": {
+		"Build Game Code": [
+			"*.cpp"
+		],
+		"Build Game Program": [
+			"main.cpp"
+		]
+	}
+}

@@ -1,0 +1,20 @@
+[libs]
+stdc++
+m
+pthread
+mingw32
+SDL2main
+SDL2
+[lib_flags]
+-std=c++11
+-L"C:/dev/supportlibs64/lib"
+
+[includes]
+C:/dev/supportlibs64/include
+./include
+[flags]
+-std=c++11
+[defines]
+PLATFORM_WINDOWS
+[linker_flags]
+-Wl,-rpath -Wl,\$$ORIGIN/lib
